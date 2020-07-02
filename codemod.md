@@ -49,4 +49,13 @@ deno run -A --unstable codemod.ts
 import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
 ```
 
-6. Finally, scan through all the .ts files in each project for any errors.
+6. Replace the event emitter import with a deno equivalent
+
+```
+// replace
+import { EventEmitter } from '../events/index.ts';
+// with
+import EventEmitter from 'https://deno.land/x/event_emitter/mod.ts';
+```
+
+7. Finally, scan through all the .ts files in each project for any unforeseen errors.
