@@ -2,6 +2,7 @@
 import {
   walk,
   readFileStr,
+  writeFileStr,
 } from "https://deno.land/std/fs/mod.ts";
 import {
   join,
@@ -19,7 +20,7 @@ const printFilesNames = async () => {
       if (entry.path.includes("/")) {
         if (entry.path.endsWith(".ts")) {
           let file = await readFileStr(entry.path);
-          for (let i = 0; importRegex.test(file) && i < 1; i++) {
+          while (importRegex.test(file)) {
             const match = (file.match(importRegex) as RegExpMatchArray);
             const index = match.index as number;
             const path = match[1];
@@ -28,15 +29,18 @@ const printFilesNames = async () => {
               jsonSet.add(
                 join(dirname(entry.path), path),
               );
-            } else {
-              console.log(index);
-              console.log(path.length);
               file = file.replace(
                 file.slice(index, index + path.length + 8),
-                ` from '${path.startsWith(".") ? path : `../${path}`}'`,
+                ` from '${path}'`,
+              );
+            } else {
+              file = file.replace(
+                file.slice(index, index + path.length + 8),
+                ` from '${path.startsWith(".") ? path : `../${path}`}.ts'`,
               );
             }
           }
+          await writeFileStr(entry.path, file);
         }
       }
     }
