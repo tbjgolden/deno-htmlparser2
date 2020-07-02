@@ -58,4 +58,6 @@ import { EventEmitter } from '../events/index.ts';
 import EventEmitter from 'https://deno.land/x/event_emitter/mod.ts';
 ```
 
-7. Finally, scan through all the .ts files in each project for any unforeseen errors.
+7. Remove all uses and definitions of WritableStream.
+
+8. Finally, scan through all the .ts files in each project for any unforeseen errors.

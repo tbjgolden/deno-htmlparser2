@@ -1,7 +1,12 @@
-import { Parser, ParserOptions } from './Parser.ts';
+import { Parser, ParserOptions } from "./Parser.ts";
 export { Parser, ParserOptions };
 
-import { DomHandler, DomHandlerOptions, Node, Element } from '../domhandler/index.ts';
+import {
+  DomHandler,
+  DomHandlerOptions,
+  Node,
+  Element,
+} from "../domhandler/index.ts";
 
 export { DomHandler, DomHandlerOptions };
 
@@ -16,9 +21,9 @@ type Options = ParserOptions & DomHandlerOptions;
  * @param options Optional options for the parser and DOM builder.
  */
 export function parseDOM(data: string, options?: Options): Node[] {
-    const handler = new DomHandler(void 0, options);
-    new Parser(handler, options).end(data);
-    return handler.dom;
+  const handler = new DomHandler(void 0, options);
+  new Parser(handler, options).end(data);
+  return handler.dom;
 }
 /**
  * Creates a parser instance, with an attached DOM handler.
@@ -28,16 +33,16 @@ export function parseDOM(data: string, options?: Options): Node[] {
  * @param elementCb An optional callback that will be called every time a tag has been completed inside of the DOM.
  */
 export function createDomStream(
-    cb: (error: Error | null, dom: Node[]) => void,
-    options?: Options,
-    elementCb?: (element: Element) => void
+  cb: (error: Error | null, dom: Node[]) => void,
+  options?: Options,
+  elementCb?: (element: Element) => void,
 ) {
-    const handler = new DomHandler(cb, options, elementCb);
-    return new Parser(handler, options);
+  const handler = new DomHandler(cb, options, elementCb);
+  return new Parser(handler, options);
 }
 
-export { default as Tokenizer } from './Tokenizer.ts';
-import * as ElementType from '../domelementtype/index.ts';
+export { default as Tokenizer } from "./Tokenizer.ts";
+import * as ElementType from "../domelementtype/index.ts";
 export { ElementType };
 
 /**
@@ -46,18 +51,18 @@ export { ElementType };
  * Format: eventname: number of arguments.
  */
 export const EVENTS = {
-    attribute: 2,
-    cdatastart: 0,
-    cdataend: 0,
-    text: 1,
-    processinginstruction: 2,
-    comment: 1,
-    commentend: 0,
-    closetag: 1,
-    opentag: 2,
-    opentagname: 1,
-    error: 1,
-    end: 0,
+  attribute: 2,
+  cdatastart: 0,
+  cdataend: 0,
+  text: 1,
+  processinginstruction: 2,
+  comment: 1,
+  commentend: 0,
+  closetag: 1,
+  opentag: 2,
+  opentagname: 1,
+  error: 1,
+  end: 0,
 };
 
 /*
@@ -65,13 +70,12 @@ export const EVENTS = {
     They should probably be removed eventually.
 */
 
-export * from './FeedHandler.ts';
-export * from './WritableStream.ts';
-export * from './CollectingHandler.ts';
+export * from "./FeedHandler.ts";
+export * from "./CollectingHandler.ts";
 
-import * as DomUtils from '../domutils/index.ts';
+import * as DomUtils from "../domutils/index.ts";
 export { DomUtils };
 
 // Old names for Dom- & FeedHandler
 export { DomHandler as DefaultHandler };
-export { FeedHandler as RssHandler } from './FeedHandler.ts';
+export { FeedHandler as RssHandler } from "./FeedHandler.ts";
