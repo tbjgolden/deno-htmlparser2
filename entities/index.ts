@@ -1,5 +1,5 @@
-import { decodeXML, decodeHTML, decodeHTMLStrict } from "./decode";
-import { encodeXML, encodeHTML } from "./encode";
+import { decodeXML, decodeHTML, decodeHTMLStrict } from './decode.ts';
+import { encodeXML, encodeHTML } from './encode.ts';
 
 /**
  * Decodes a string with entities.
@@ -38,7 +38,7 @@ export {
     // Legacy aliases
     encodeHTML as encodeHTML4,
     encodeHTML as encodeHTML5,
-} from "./encode";
+} from './encode.ts';
 
 export {
     decodeXML,
@@ -50,4 +50,4 @@ export {
     decodeHTMLStrict as decodeHTML4Strict,
     decodeHTMLStrict as decodeHTML5Strict,
     decodeXML as decodeXMLStrict,
-} from "./decode";
+} from './decode.ts';

@@ -1,4 +1,4 @@
-import { ElementType } from "domelementtype";
+import { ElementType } from '../domelementtype/index.ts';
 
 const nodeTypes = new Map<ElementType, number>([
     [ElementType.Tag, 1],

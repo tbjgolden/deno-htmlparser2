@@ -1,6 +1,6 @@
-import DomHandler, { DomHandlerOptions, Node, Element } from "domhandler";
-import * as DomUtils from "domutils";
-import { Parser, ParserOptions } from "./Parser";
+import DomHandler, { DomHandlerOptions, Node, Element } from '../domhandler/index.ts';
+import * as DomUtils from '../domutils/index.ts';
+import { Parser, ParserOptions } from './Parser.ts';
 
 interface FeedItem {
     id?: string;

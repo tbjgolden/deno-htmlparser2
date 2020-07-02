@@ -1,4 +1,4 @@
-import { Handler } from "./Parser";
+import { Handler } from './Parser.ts';
 
 /**
  * Calls a specific handler function for all events that are encountered.

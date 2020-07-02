@@ -1,5 +1,5 @@
-import MultiplexHandler from "./MultiplexHandler";
-import { Handler } from "./Parser";
+import MultiplexHandler from './MultiplexHandler.ts';
+import { Handler } from './Parser.ts';
 
 export class CollectingHandler extends MultiplexHandler {
     _cbs: Partial<Handler>;

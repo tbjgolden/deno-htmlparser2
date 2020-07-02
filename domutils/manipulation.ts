@@ -1,4 +1,4 @@
-import { Node, Element } from "domhandler";
+import { Node, Element } from '../domhandler/index.ts';
 
 /***
  * Remove an element from the dom

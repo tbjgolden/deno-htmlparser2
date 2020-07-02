@@ -1,7 +1,7 @@
-import decodeCodePoint from "entities/lib/decode_codepoint";
-import entityMap from "entities/lib/maps/entities.json";
-import legacyMap from "entities/lib/maps/legacy.json";
-import xmlMap from "entities/lib/maps/xml.json";
+import decodeCodePoint from '../entities/lib/decode_codepoint/index.ts';
+import entityMap from 'entities/lib/maps/entities.json';
+import legacyMap from 'entities/lib/maps/legacy.json';
+import xmlMap from 'entities/lib/maps/xml.json';
 
 /** All the states the tokenizer can be in. */
 const enum State {

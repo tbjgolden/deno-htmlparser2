@@ -1,11 +1,11 @@
-import { ElementType } from "domelementtype";
+import { ElementType } from '../domelementtype/index.ts';
 import {
     Node,
     Element,
     DataNode,
     NodeWithChildren,
     ProcessingInstruction,
-} from "./node";
+} from './node.ts';
 
 export { Node, NodeWithChildren, DataNode, Element };
 

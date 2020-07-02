@@ -1,18 +1,18 @@
-import xmlMap from "./maps/xml.json";
+import xmlMap from './maps/xml.json';
 
 const inverseXML = getInverseObj(xmlMap);
 const xmlReplacer = getInverseReplacer(inverseXML);
 
 export const encodeXML = getInverse(inverseXML, xmlReplacer);
 
-import htmlMap from "./maps/entities.json";
+import htmlMap from './maps/entities.json';
 
 const inverseHTML = getInverseObj(htmlMap);
 const htmlReplacer = getInverseReplacer(inverseHTML);
 
 export const encodeHTML = getInverse(inverseHTML, htmlReplacer);
 
-import { MapType } from "./decode";
+import { MapType } from './decode.ts';
 
 function getInverseObj(obj: MapType): MapType {
     return Object.keys(obj)

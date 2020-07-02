@@ -1,15 +1,15 @@
 /*
   Module dependencies
 */
-import * as ElementType from "domelementtype";
-import { Node, NodeWithChildren, Element, DataNode } from "domhandler";
-import * as entities from "entities";
+import * as ElementType from '../domelementtype/index.ts';
+import { Node, NodeWithChildren, Element, DataNode } from '../domhandler/index.ts';
+import * as entities from '../entities/index.ts';
 
 /* mixed-case SVG and MathML tags & attributes
    recognized by the HTML parser, see
    https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inforeign
 */
-import { elementNames, attributeNames } from "./foreignNames";
+import { elementNames, attributeNames } from './foreignNames.ts';
 
 export interface DomSerializerOptions {
   emptyAttrs?: boolean;

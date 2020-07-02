@@ -1,6 +1,6 @@
-import { Node } from "domhandler";
-import { isTag, isCDATA, isText, hasChildren } from "./tagtypes";
-import renderHTML, { DomSerializerOptions } from "dom-serializer";
+import { Node } from '../domhandler/index.ts';
+import { isTag, isCDATA, isText, hasChildren } from './tagtypes.ts';
+import renderHTML, { DomSerializerOptions } from '../dom-serializer/index.ts';
 
 export function getOuterHTML(
     node: Node | Node[],

@@ -1,4 +1,4 @@
-import { Node, Element } from "domhandler";
+import { Node, Element } from '../domhandler/index.ts';
 
 export function getChildren(elem: Node | Element): Node[] | null {
     return (elem as { children?: Node[] }).children || null;

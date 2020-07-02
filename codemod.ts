@@ -14,7 +14,7 @@ const importRegex = / from "([^"]*)"/;
 // Async
 const jsonSet = new Set<string>();
 
-const printFilesNames = async () => {
+const fixFiles = async () => {
   for await (const entry of walk(".")) {
     if (!entry.path.startsWith(".")) {
       if (entry.path.includes("/")) {
@@ -36,7 +36,9 @@ const printFilesNames = async () => {
             } else {
               file = file.replace(
                 file.slice(index, index + path.length + 8),
-                ` from '${path.startsWith(".") ? path : `../${path}`}.ts'`,
+                ` from '${
+                  path.startsWith(".") ? `${path}.ts` : `../${path}/index.ts`
+                }'`,
               );
             }
           }
@@ -47,7 +49,7 @@ const printFilesNames = async () => {
   }
 };
 
-await printFilesNames();
+await fixFiles();
 
 if (jsonSet.size > 0) {
   console.log("There are some JSON files to manually fix to work with Deno");

@@ -1,5 +1,5 @@
-import { Node, Element, NodeWithChildren, DataNode } from "domhandler";
-import { ElementType, isTag as isTagRaw } from "domelementtype";
+import { Node, Element, NodeWithChildren, DataNode } from '../domhandler/index.ts';
+import { ElementType, isTag as isTagRaw } from '../domelementtype/index.ts';
 
 export function isTag(node: Node): node is Element {
     return isTagRaw(node);

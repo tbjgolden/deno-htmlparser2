@@ -1,4 +1,4 @@
-import decodeMap from "./maps/decode.json";
+import decodeMap from './maps/decode.json';
 
 // modified version of https://github.com/mathiasbynens/he/blob/master/src/he.js#L94-L119
 export default function decodeCodePoint(codePoint: number) {

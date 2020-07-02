@@ -1,7 +1,7 @@
-import entityMap from "./maps/entities.json";
-import legacyMap from "./maps/legacy.json";
-import xmlMap from "./maps/xml.json";
-import decodeCodePoint from "./decode_codepoint";
+import entityMap from './maps/entities.json';
+import legacyMap from './maps/legacy.json';
+import xmlMap from './maps/xml.json';
+import decodeCodePoint from './decode_codepoint.ts';
 
 export const decodeXML = getStrictDecoder(xmlMap);
 export const decodeHTMLStrict = getStrictDecoder(entityMap);

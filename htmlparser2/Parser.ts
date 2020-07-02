@@ -1,5 +1,5 @@
-import Tokenizer from "./Tokenizer";
-import { EventEmitter } from "events";
+import Tokenizer from './Tokenizer.ts';
+import { EventEmitter } from '../events/index.ts';
 
 const formTags = new Set([
     "input",

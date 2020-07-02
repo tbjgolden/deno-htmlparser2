@@ -1,7 +1,7 @@
-import { Parser, ParserOptions } from "./Parser";
+import { Parser, ParserOptions } from './Parser.ts';
 export { Parser, ParserOptions };
 
-import { DomHandler, DomHandlerOptions, Node, Element } from "domhandler";
+import { DomHandler, DomHandlerOptions, Node, Element } from '../domhandler/index.ts';
 
 export { DomHandler, DomHandlerOptions };
 
@@ -36,8 +36,8 @@ export function createDomStream(
     return new Parser(handler, options);
 }
 
-export { default as Tokenizer } from "./Tokenizer";
-import * as ElementType from "domelementtype";
+export { default as Tokenizer } from './Tokenizer.ts';
+import * as ElementType from '../domelementtype/index.ts';
 export { ElementType };
 
 /**
@@ -65,13 +65,13 @@ export const EVENTS = {
     They should probably be removed eventually.
 */
 
-export * from "./FeedHandler";
-export * from "./WritableStream";
-export * from "./CollectingHandler";
+export * from './FeedHandler.ts';
+export * from './WritableStream.ts';
+export * from './CollectingHandler.ts';
 
-import * as DomUtils from "domutils";
+import * as DomUtils from '../domutils/index.ts';
 export { DomUtils };
 
 // Old names for Dom- & FeedHandler
 export { DomHandler as DefaultHandler };
-export { FeedHandler as RssHandler } from "./FeedHandler";
+export { FeedHandler as RssHandler } from './FeedHandler.ts';

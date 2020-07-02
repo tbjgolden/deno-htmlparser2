@@ -1,5 +1,5 @@
-import { Node } from "domhandler";
-import { hasChildren } from "./tagtypes";
+import { Node } from '../domhandler/index.ts';
+import { hasChildren } from './tagtypes.ts';
 
 /**
  * Given an array of nodes, remove any member that is contained by another.

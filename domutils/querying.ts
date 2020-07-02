@@ -1,5 +1,5 @@
-import { Node, Element } from "domhandler";
-import { isTag, hasChildren } from "./tagtypes";
+import { Node, Element } from '../domhandler/index.ts';
+import { isTag, hasChildren } from './tagtypes.ts';
 
 /**
  * Search a node and its children for nodes passing a test function.
