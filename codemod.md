@@ -20,7 +20,7 @@ rm */*
 rm -rf */.*
 ```
 
-2. Move all src files down a directory
+3. Move all src files down a directory
 
 ```
 mv dom-serializer/src/* dom-serializer
@@ -37,8 +37,16 @@ mv htmlparser2/src/* htmlparser2
 rm -rf htmlparser2/src
 ```
 
-3. Run codemod script
+4. Run codemod script
 
 ```
+deno run -A --unstable codemod.ts
+```
+
+5. Manually fix .json file usages (Deno has readJSONSync in place of require)
 
 ```
+import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
+```
+
+6. Finally, scan through all the .ts files in each project for any errors.

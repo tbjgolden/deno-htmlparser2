@@ -4,10 +4,6 @@ import {
   readFileStr,
   writeFileStr,
 } from "https://deno.land/std/fs/mod.ts";
-import {
-  join,
-  dirname,
-} from "https://deno.land/std/path/mod.ts";
 
 const importRegex = / from "([^"]*)"/;
 
@@ -27,7 +23,7 @@ const fixFiles = async () => {
 
             if (path.endsWith(".json")) {
               jsonSet.add(
-                join(dirname(entry.path), path),
+                `${entry.path} ~> ${path}`,
               );
               file = file.replace(
                 file.slice(index, index + path.length + 8),
@@ -37,7 +33,9 @@ const fixFiles = async () => {
               file = file.replace(
                 file.slice(index, index + path.length + 8),
                 ` from '${
-                  path.startsWith(".") ? `${path}.ts` : `../${path}/index.ts`
+                  path.startsWith(".") ? `${path}.ts` : (
+                    path.includes("/") ? `../${path}.ts` : `../${path}/index.ts`
+                  )
                 }'`,
               );
             }
