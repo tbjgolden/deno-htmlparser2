@@ -1,8 +1,6 @@
-import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
+import decodeMap from "./maps/decode.ts";
 
 type MapType = Record<string, number>;
-
-const decodeMap = readJsonSync("./maps/decode.json") as MapType;
 
 // modified version of https://github.com/mathiasbynens/he/blob/master/src/he.js#L94-L119
 export default function decodeCodePoint(codePoint: number) {
@@ -10,8 +8,8 @@ export default function decodeCodePoint(codePoint: number) {
     return "\uFFFD";
   }
 
-  if (codePoint in decodeMap) {
-    codePoint = decodeMap[codePoint];
+  if (codePoint in (decodeMap as MapType)) {
+    codePoint = (decodeMap as MapType)[codePoint];
   }
 
   let output = "";

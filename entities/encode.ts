@@ -1,8 +1,7 @@
-import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
 import { MapType } from "./decode.ts";
 
-const htmlMap = readJsonSync("./maps/entities.json") as MapType;
-const xmlMap = readJsonSync("./maps/xml.json") as MapType;
+import htmlMap from "./maps/entities.ts";
+import xmlMap from "./maps/xml.ts";
 
 const inverseXML = getInverseObj(xmlMap);
 const xmlReplacer = getInverseReplacer(inverseXML);

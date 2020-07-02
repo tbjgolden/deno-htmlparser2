@@ -1,13 +1,12 @@
-import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
 import decodeCodePoint from "../entities/decode_codepoint.ts";
 
 export interface MapType {
   [key: string]: string;
 }
 
-const entityMap = readJsonSync("../entities/lib/maps/entities.json") as MapType;
-const legacyMap = readJsonSync("../entities/lib/maps/legacy.json") as MapType;
-const xmlMap = readJsonSync("../entities/lib/maps/xml.json") as MapType;
+import entityMap from "../entities/maps/entities.ts";
+import legacyMap from "../entities/maps/legacy.ts";
+import xmlMap from "../entities/maps/xml.ts";
 
 /** All the states the tokenizer can be in. */
 const enum State {

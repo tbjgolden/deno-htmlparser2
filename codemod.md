@@ -43,11 +43,7 @@ rm -rf htmlparser2/src
 deno run -A --unstable codemod.ts
 ```
 
-5. Manually fix .json file usages (Deno has readJSONSync in place of require)
-
-```
-import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
-```
+5. Manually change .json files to .ts files, and change imports from .json to .ts
 
 6. Replace the event emitter import with a deno equivalent
 

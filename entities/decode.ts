@@ -1,14 +1,12 @@
 import decodeCodePoint from "./decode_codepoint.ts";
 
-import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
+import entityMap from "./maps/entities.ts";
+import legacyMap from "./maps/legacy.ts";
+import xmlMap from "./maps/xml.ts";
 
 export interface MapType {
   [key: string]: string;
 }
-
-const entityMap = readJsonSync("./maps/entities.json") as MapType;
-const legacyMap = readJsonSync("./maps/legacy.json") as MapType;
-const xmlMap = readJsonSync("./maps/xml.json") as MapType;
 
 export const decodeXML = getStrictDecoder(xmlMap);
 export const decodeHTMLStrict = getStrictDecoder(entityMap);
