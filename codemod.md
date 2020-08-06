@@ -51,7 +51,7 @@ deno run -A --unstable codemod.ts
 // replace
 import { EventEmitter } from '../events/index.ts';
 // with
-import EventEmitter from 'https://deno.land/x/event_emitter/mod.ts';
+import EventEmitter from 'https://deno.land/x/events@v1.0.0/mod.ts';
 ```
 
 7. Remove all uses and definitions of WritableStream.
