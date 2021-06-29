@@ -4,7 +4,7 @@ Deno port of HTML Parser 2 (and its dependencies).
 
 ```ts
 // direct
-import { Parser } from "https://rawcdn.githack.com/tbjgolden/deno-htmlparser2/5522f6286a17cc3857c5f1aa30e59e82968de822/htmlparser2/index.ts";
+import { Parser } from "https://rawcdn.githack.com/tbjgolden/deno-htmlparser2/451e3693f15dd2735283e65085edf3db94587d10/htmlparser2/index.ts";
 
 const parser = new Parser(
   {
