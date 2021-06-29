@@ -1,5 +1,5 @@
 import Tokenizer from "./Tokenizer.ts";
-import EventEmitter from "https://deno.land/x/event_emitter/mod.ts";
+import EventEmitter from "https://deno.land/x/events@v1.0.0/mod.ts";
 
 const formTags = new Set([
   "input",
